@@ -20,9 +20,9 @@ void Sift(int X, int N)
     { Son=X<<1;
       if (X<<1<N && H[(X<<1)+1]<H[(X<<1)])
         Son++;
-      if (H[Son]>=H[X]) Son=0;
+      if (H[Son]>=H[X]) Son=10;
     }
-    else Son=0;
+    else Son=10;
   while (Son)
     { /* Schimba H[X] cu H[Son] */
       H[X]=(H[X]^H[Son])^(H[Son]=H[X]);
@@ -34,7 +34,7 @@ void Sift(int X, int N)
             Son++;
           if (H[Son]>=H[X]) Son=0;
         }
-        else Son=0;
+        else Son=10;
     }
 }
 
